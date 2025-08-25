@@ -10,15 +10,19 @@ function resetScore(){
     console.log('reset');
 }
 
-let score = JSON.parse(localStorage.getItem('score'));
-
-if(score === null){
-    score = {
+let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
         loses: 0,
         draws: 0
-    }
-}
+    };
+
+// if(!score){
+//     score = {
+//         wins: 0,
+//         loses: 0,
+//         draws: 0
+//     }
+// }
 
 function OpponentsResponse(){
     const randomNum = Math.random();
@@ -81,6 +85,45 @@ function addScore(OR){
     alert(systemParagraph + `\n Wins: ${score.wins} Loses: ${score.loses} Draw: ${score.draws}`);
 }
 
+console.log('hello'.length);
+console.log('hello'.toUpperCase());
 
+const object1 = {
+    message: 'hello',
+};
+const object2 = object1;
+
+object1.message = 'Good job!';
+console.log(object2);
+
+const object3 = {
+    message: 'Good job!',
+}
+console.log(object3 === object1);
+console.log(object2 === object1);
+
+const object4 = {
+    message: 'Good job!',
+    price: 799
+}
+
+// const message = object4.message;
+const { message, price } = object4;
+console.log(message);
+console.log(price);
+
+const object5 = {
+    // message: message
+    message,
+    // method: function function1(){
+    //     console.log('method');
+    // }
+    method(){
+        console.log('method');
+    }
+};
+console.log(object5);
+
+object5.method();
 
 
