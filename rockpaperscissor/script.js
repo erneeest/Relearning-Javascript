@@ -1,13 +1,24 @@
 let result = '';
 let systemParagraph;
 
-const score = {
-    wins: 0,
-    loses: 0,
-    draws: 0
+function resetScore(){
+    score.wins = 0;
+    score.loses = 0;
+    score.draws = 0;
+
+    localStorage.removeItem('score');
+    console.log('reset');
 }
 
-console.log(score.wins);
+let score = JSON.parse(localStorage.getItem('score'));
+
+if(score === null){
+    score = {
+        wins: 0,
+        loses: 0,
+        draws: 0
+    }
+}
 
 function OpponentsResponse(){
     const randomNum = Math.random();
@@ -63,8 +74,13 @@ function addScore(OR){
         score.draws++;
     }
 
+
+    localStorage.setItem('score' ,JSON.stringify(score));
         
     systemParagraph = `Opponent's respone is ${OR} \n${result}`;
     alert(systemParagraph + `\n Wins: ${score.wins} Loses: ${score.loses} Draw: ${score.draws}`);
 }
+
+
+
 
