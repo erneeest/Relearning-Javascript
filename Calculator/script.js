@@ -12,6 +12,8 @@ function removeInput(){
     if(toCalculate){
         console.log(toCalculate);
         saveLocalStorage();
+    }else{
+        console.log('Enter a number');
     }
 }
 function saveLocalStorage(){
