@@ -30,3 +30,22 @@ function subscribeSystem(){
         isTrue = !isTrue;
     }
 }
+
+let vouchGoal = 50;
+let deliveryFee = 10;
+
+document.querySelector('.vouch-goal').innerHTML = vouchGoal;
+document.querySelector('.delivery-fee').innerHTML = deliveryFee;
+
+function toCalculate(){
+    let userInput = document.querySelector('.user-input').value;
+    if(userInput.trim() !== ''){
+
+        if(parseInt(userInput) < vouchGoal){
+            userInput = parseInt(userInput) + deliveryFee;
+        }
+        console.log(userInput);
+    }else{
+        console.log('Please enter a number on the input');
+    }
+}
