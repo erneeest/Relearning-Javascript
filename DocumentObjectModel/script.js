@@ -38,13 +38,14 @@ document.querySelector('.vouch-goal').innerHTML = vouchGoal;
 document.querySelector('.delivery-fee').innerHTML = deliveryFee;
 
 function toCalculate(){
-    let userInput = document.querySelector('.user-input').value;
-    if(userInput.trim() !== ''){
+    let userInput = Number(document.querySelector('.user-input').value);
+    let addedDeliveryFee = userInput;
+    if(toString(userInput).trim() !== ''){
 
-        if(parseInt(userInput) < vouchGoal){
-            userInput = parseInt(userInput) + deliveryFee;
+        if(userInput < vouchGoal){
+            addedDeliveryFee = userInput + deliveryFee;
         }
-        console.log(userInput);
+        document.querySelector('.js-total-cost').innerHTML = addedDeliveryFee;
     }else{
         console.log('Please enter a number on the input');
     }
