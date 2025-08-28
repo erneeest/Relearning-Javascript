@@ -12,6 +12,8 @@ let product2 = {
 product1.price += 500;
 
 product1['delivery-time'] = '3 days';
+product1.quality = 'very good';
+console.log(product1);
 
 function comparePrice(product1, product2){
     if(product1.price < product2.price){
