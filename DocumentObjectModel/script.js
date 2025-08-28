@@ -50,3 +50,15 @@ function toCalculate(){
         console.log('Please enter a number on the input');
     }
 }
+
+function handlesCostKeyDown(event){
+    console.log(event.key);
+    event.key ==='Enter' ? toCalculate() : null;
+}
+
+console.log('45' + 5);
+console.log('45' - 5);
+
+window.document
+window.console.log('window test');
+window.alert('a');

@@ -14,7 +14,7 @@
       <h2>Amazon Shipping Calculator</h2>
       <p>Orders under $<span class="vouch-goal">0</span> = +$<span class="delivery-fee">0</span> shipping.</p>
       <p>Orders over $<span class="vouch-goal">0</span> = FREE shipping.</p>
-      <input class="user-input" placeholder="Enter your payment here">
+      <input class="user-input" placeholder="Enter your payment here" onkeydown="handlesCostKeyDown(event)">
       <button class="user-input-button" onclick="toCalculate()">Calculate</button>
       <p>Total cost: $<span class="js-total-cost">0 </span></p>
     </div>
