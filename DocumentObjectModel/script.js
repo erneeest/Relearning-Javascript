@@ -31,21 +31,21 @@ function subscribeSystem(){
     }
 }
 
-let vouchGoal = 50;
-let deliveryFee = 10;
+let vouchGoal = 50 * 100;
+let deliveryFee = 10 * 100;
 
-document.querySelector('.vouch-goal').innerHTML = vouchGoal;
-document.querySelector('.delivery-fee').innerHTML = deliveryFee;
+document.querySelector('.vouch-goal').innerHTML = vouchGoal / 100;
+document.querySelector('.delivery-fee').innerHTML = deliveryFee / 100;
 
 function toCalculate(){
-    let userInput = Number(document.querySelector('.user-input').value);
+    let userInput = Number(document.querySelector('.user-input').value) * 100;
     let addedDeliveryFee = userInput;
     if(toString(userInput).trim() !== ''){
 
         if(userInput < vouchGoal){
             addedDeliveryFee = userInput + deliveryFee;
         }
-        document.querySelector('.js-total-cost').innerHTML = addedDeliveryFee;
+        document.querySelector('.js-total-cost').innerHTML = addedDeliveryFee / 100;
     }else{
         console.log('Please enter a number on the input');
     }
@@ -56,9 +56,14 @@ function handlesCostKeyDown(event){
     event.key ==='Enter' ? toCalculate() : null;
 }
 
-console.log('45' + 5);
-console.log('45' - 5);
+// console.log('45' + 5);
+// console.log('45' - 5);
 
-window.document
-window.console.log('window test');
-window.alert('a');
+// window.document
+// window.console.log('window test');
+
+
+function typingTest(){
+    let typingTest = document.querySelector('.typing-test').value;
+    document.querySelector('.typing-mirror').innerHTML = typingTest;
+}
