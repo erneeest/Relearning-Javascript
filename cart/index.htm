@@ -8,23 +8,16 @@
   </head>
   <body>
     <h2>Result is on the console</h2>
-    <button class="btn btn-primary" onclick="
-            cartQuantityFunction();
-        ">Show Quantity</button>
+    <button class="btn btn-primary" onclick="cartQuantityFunction();">Show Quantity /w love</button>
 
-    <button class="btn btn-success" onclick="
-            (cartQuantity<10) ? cartQuantity++ : console.log('The cart is full');
-    ">Add to Cart</button>
+    <button class="btn btn-success" onclick="addCart()">Add to Cart</button>
 
-    <button class="btn btn-danger" onclick="
-        (cartQuantity>0) ? cartQuantity-- : console.log('the cart is empty');
-    ">
-      Remove 1 product
-    </button>
-
-    <button class="btn btn-outline-danger" onclick="
-        cartQuantity = 0;
-    ">Reset Cart</button>
+    <button class="btn btn-danger" onclick="removeCart()">Remove 1 product</button>
+    
+    <button class="btn btn-outline-danger" onclick="clearCart()">Reset Cart</button>
+    
+    <h3 class="cart-quantity-display"></h3>
+    <img class="cat" src="cat-meme.png" alt="cat ni ernest" style="display: none;">
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
