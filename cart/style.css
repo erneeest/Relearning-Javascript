@@ -1,0 +1,6 @@
+.imageHidden{
+    display: none;
+}
+.imageHidden.imageShow{
+    display: block;
+}

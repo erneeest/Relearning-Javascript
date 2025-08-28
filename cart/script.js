@@ -20,6 +20,13 @@ function clearCart(){
 }
 
 function cartWithLove(){
-    document.querySelector('.cat').outerHTML = `<img class="cat" src="cat-meme.png" alt="cat ni ernest" style="display: block;">`;
+    // document.querySelector('.cat').classList.remove('imageHidden');
+    // document.querySelector('.cat').classList.add('imageShow');
+
+    // document.querySelector('.cat').classList.replace('imageHidden', 'showImage');
+
+
+    document.querySelector('.cat').classList.toggle('imageShow');
     cartQuantityFunction();
+    console.log(document.querySelector('.cat'));
 }
