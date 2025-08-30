@@ -1,20 +1,24 @@
 let result = '';
-let systemParagraph;
+
+
 
 function resetScore(){
     score.wins = 0;
     score.loses = 0;
     score.draws = 0;
+    
+    document.querySelector('.scoring').innerHTML = `\n Wins: ${score.wins} Loses: ${score.loses} Draw: ${score.draws}`;
 
     localStorage.removeItem('score');
     console.log('reset');
 }
 
 let score = JSON.parse(localStorage.getItem('score')) || {
-        wins: 0,
-        loses: 0,
-        draws: 0
-    };
+    wins: 0,
+    loses: 0,
+    draws: 0
+};
+document.querySelector('.scoring').innerHTML = `\n Wins: ${score.wins} Loses: ${score.loses} Draw: ${score.draws}`;
 
 // if(!score){
 //     score = {
@@ -44,7 +48,9 @@ function rock(OR = OpponentsResponse()){
         result = 'You Win!';
     }
 
-    addScore(OR);
+    displayMoves('Rock', OR);
+
+    addScore();
 }
 function paper(OR = OpponentsResponse()){
     if(OR === 'Rock'){
@@ -55,7 +61,9 @@ function paper(OR = OpponentsResponse()){
         result = 'You Lose!';
     }
 
-    addScore(OR);
+    displayMoves('Paper', OR);
+
+    addScore();
 }
 function scissor(OR = OpponentsResponse()){
     if(OR === 'Rock'){
@@ -66,10 +74,20 @@ function scissor(OR = OpponentsResponse()){
         result = 'Draw!';
     }
 
-    addScore(OR);
+    displayMoves('Scissor', OR);
+
+    addScore();
 }
 
-function addScore(OR){
+function displayMoves(YM, OR){
+    document.querySelector('.urMove').innerHTML = YM;
+    document.querySelector('.oppMove').innerHTML = OR;
+
+    // document.querySelector('.UM').src = 'cat-meme.png'; //THIS IS COOL!!!!!
+    // console.log(document.querySelector('.UM').src); //THIS IS COOL!!!!!
+}
+
+function addScore(){
     if(result === 'You Win!'){
         score.wins++;
     }else if(result === 'You Lose!'){
@@ -77,53 +95,50 @@ function addScore(OR){
     }else if(result === 'Draw!'){
         score.draws++;
     }
-
-
+    
     localStorage.setItem('score' ,JSON.stringify(score));
-        
-    systemParagraph = `Opponent's respone is ${OR} \n${result}`;
-    alert(systemParagraph + `\n Wins: ${score.wins} Loses: ${score.loses} Draw: ${score.draws}`);
+    document.querySelector('.scoring').innerHTML = `\n Wins: ${score.wins} Loses: ${score.loses} Draw: ${score.draws}`;
 }
 
-console.log('hello'.length);
-console.log('hello'.toUpperCase());
+// console.log('hello'.length);
+// console.log('hello'.toUpperCase());
 
-const object1 = {
-    message: 'hello',
-};
-const object2 = object1;
+// const object1 = {
+//     message: 'hello',
+// };
+// const object2 = object1;
 
-object1.message = 'Good job!';
-console.log(object2);
+// object1.message = 'Good job!';
+// console.log(object2);
 
-const object3 = {
-    message: 'Good job!',
-}
-console.log(object3 === object1);
-console.log(object2 === object1);
+// const object3 = {
+//     message: 'Good job!',
+// }
+// console.log(object3 === object1);
+// console.log(object2 === object1);
 
-const object4 = {
-    message: 'Good job!',
-    price: 799
-}
+// const object4 = {
+//     message: 'Good job!',
+//     price: 799
+// }
 
-// const message = object4.message;
-const { message, price } = object4;
-console.log(message);
-console.log(price);
+// // const message = object4.message;
+// const { message, price } = object4;
+// console.log(message);
+// console.log(price);
 
-const object5 = {
-    // message: message
-    message,
-    // method: function function1(){
-    //     console.log('method');
-    // }
-    method(){
-        console.log('method');
-    }
-};
-console.log(object5);
+// const object5 = {
+//     // message: message
+//     message,
+//     // method: function function1(){
+//     //     console.log('method');
+//     // }
+//     method(){
+//         console.log('method');
+//     }
+// };
+// console.log(object5);
 
-object5.method();
+// object5.method();
 
 
