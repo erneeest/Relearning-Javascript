@@ -32,14 +32,19 @@ function OpponentsResponse(){
     const randomNum = Math.random();
 
     if(randomNum < 1/3){
+        document.querySelector('.oppMove').src = 'images/rock.png';
         return 'Rock';
     }else if(randomNum < 2/3){
+        document.querySelector('.oppMove').src = 'images/paper.png';
         return 'Paper';
     }else{
+        document.querySelector('.oppMove').src = 'images/scissor.png';
         return 'Scissor';
     }
 }
 function rock(OR = OpponentsResponse()){
+    document.querySelector('.urMove').src = 'images/rock.png';
+   
     if(OR === 'Rock'){
         result = 'Draw!';
     }else if(OR === 'Paper'){
@@ -53,6 +58,8 @@ function rock(OR = OpponentsResponse()){
     addScore();
 }
 function paper(OR = OpponentsResponse()){
+    document.querySelector('.urMove').src = 'images/paper.png'
+
     if(OR === 'Rock'){
         result = 'You Win!';
     }else if(OR === 'Paper'){
@@ -66,6 +73,8 @@ function paper(OR = OpponentsResponse()){
     addScore();
 }
 function scissor(OR = OpponentsResponse()){
+    document.querySelector('.urMove').src = 'images/scissor.png';
+
     if(OR === 'Rock'){
         result = 'You Lose!';
     }else if(OR === 'Paper'){

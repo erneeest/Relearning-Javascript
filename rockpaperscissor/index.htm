@@ -6,19 +6,22 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-
-        <div class="">
-          <button class="" onclick="rock();">Rock</button>
-          <button class="" onclick="paper();">Paper</button>
-          <button class="" onclick="scissor();">Scissor</button>
-        </div>
-        <h3>Your Move: <span class="urMove"></span> <span class="oppMove"></span> :Opponent's Move</h3> 
-        <p class="scoring">Wins: 0 Loses: 0 Draw: 0</p>  
-        <div class="">
-                <button class="" onclick="resetScore();">Reset Score</button>
+  <body class="container">
+    <div class="centering-container">
+        <div class="buttons-grid">
+          <button class="yourButton" onclick="rock();"><img class="imageButtonTransform" src="images/rock.png" alt="rock"></button>
+          <button class="yourButton" onclick="paper();"><img class="imageButtonTransform" src="images/paper.png" alt="paper"></button>
+          <button class="yourButton" onclick="scissor();"><img class="imageButtonTransform" src="images/scissor.png" alt="scissor"></button>
         </div>
 
+        <div class="displaying-move">
+          <h1>Your Move: <img class="urMove" src="" alt=""> <img class="oppMove" src="" alt=""> :Opponent's Move</h1> 
+        </div>
+
+        <h2 class="scoring"></h2>  
+        
+        <button class="reset-btn" onclick="resetScore();">Reset Score</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
