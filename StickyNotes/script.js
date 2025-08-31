@@ -1,22 +1,22 @@
-let userList =  JSON.parse(localStorage.getItem('userList')) || [];
+// let userList =  JSON.parse(localStorage.getItem('userList')) || [];
 
-function addFunction(){
-    let inputElement = document.querySelector('.user-input');
-    const userInput = inputElement.value;
+// function addFunction(){
+//     let inputElement = document.querySelector('.user-input');
+//     const userInput = inputElement.value;
     
-    userList.push(userInput);
-    inputElement.value = '';
+//     userList.push(userInput);
+//     inputElement.value = '';
 
-    localStorage.setItem('userList', JSON.stringify(userList));
-}
+//     localStorage.setItem('userList', JSON.stringify(userList));
+// }
 
-function enterInput(event){
-    let inputElement = document.querySelector('.user-input');
-    const userInput = inputElement.value;
-    if(event.key === 'Enter' && userInput){
-        addFunction();
-    }
-}
+// function enterInput(event){
+//     let inputElement = document.querySelector('.user-input');
+//     const userInput = inputElement.value;
+//     if(event.key === 'Enter' && userInput){
+//         addFunction();
+//     }
+// }
 
 
 
@@ -43,3 +43,155 @@ function enterInput(event){
 // myArray.splice(3,1);
 // console.log(myArray);
 
+//===================================
+
+// const nums = [
+//     1,
+//     20,
+//     22,
+//     24,
+//     5
+// ]
+
+// // nums[getLastValue()] = 99;
+
+// function getLastValue(){
+//     return nums.length - 1;
+// }
+
+// function arraySwap(arrayNum){
+    
+//     let firstValue = arrayNum[0];
+//     let lastValue = arrayNum[arrayNum.length - 1];
+
+//     arrayNum[0] = lastValue;
+//     arrayNum[arrayNum.length-1] = firstValue;
+
+//     return arrayNum;
+// }
+
+// console.log(nums);
+// console.log(arraySwap(nums));
+
+//======================================
+
+// let arrayNum = [];
+// for(let i = 0; i<=10; i+=2){
+//     arrayNum.push(i);
+// }
+// console.log(arrayNum);
+
+// let word = '';
+// for(let i = 5; i>=0; i--){
+//     word += String(` ${i}`);
+// }
+// console.log(word);
+
+// let num = 5;
+// while(num >= 0){
+//     console.log(num);
+//     num--;
+// }
+// ====================================================
+// let addOneArray = [-2, -1, 0, 99];
+
+// for(let i = 0; i<=addOneArray.length-1; i++){
+//     addOneArray[i] += 1;
+// }
+
+// function addOne(arrayNum){
+//     let arrayAdded = [];
+//     for(let i = 0; i<=arrayNum.length-1; i++){
+//         arrayAdded[i] = arrayNum[i] + 1;
+//     }
+//     return arrayNum;
+// }
+
+// console.log(addOne(addOneArray));
+// ===========================================================
+
+// let arrayNums = [-2, -1, 0, 99];
+// let num = 2;
+
+// function addNum(array, num){
+//     let addedArray = [];
+//     for(let i = 0; i<=arrayNums.length-1; i++){
+//         addedArray[i] = array[i] + num;
+//     }
+//     return addedArray;
+// }
+// console.log(addNum(arrayNums, num));
+//========================================================
+
+// let arrayNums = [1, 2, 3];
+// let num = [4, 5, 6];
+
+// function addNum(array, num){
+//     let addedArray = [];
+//     for(let i = 0; i<=arrayNums.length-1; i++){
+//         addedArray[i] = array[i] + num[i];
+//     }
+//     return addedArray;
+// }
+// console.log(addNum(arrayNums, num));
+// =========================================================
+
+// let arrayNums = [-2, 3, -5, 7, 10];
+
+// function countPositive(array){
+//     let posCount = 0;
+//     for(let i = 0; i<=array.length-1; i++){
+//         if(array[i]>0){
+//             posCount++;
+//         }
+//     }
+//     return posCount;
+// }
+
+// console.log(countPositive(arrayNums));
+// =========================================================
+
+// let arrayNums = [0,1];
+
+// function minMax(array){
+    
+//     let minMax = {
+//         min: null,
+//         max: null
+//     }
+
+//     if(array.length!==1){
+//         for(let i = 0; i<=array.length-1;i++){
+//             if(array[i]<=minMax.min){
+//                 minMax.min = array[i];
+//             }
+//             if(array[i]>=minMax.max){
+//                 minMax.max = array[i];
+//             }
+//         }
+//     }else{
+//         minMax.min = array[0];
+//         minMax.max = array[0];
+//     }
+//         return minMax;
+// }
+
+// // console.log(arrayNums);
+// console.log(minMax(arrayNums));
+
+// =========================================================
+
+let words = ['apple', 'grape', 'apple', 'apple'];
+
+function wordCount(wordArray){
+
+    let wordCounter = {
+
+    }
+    for(let i = 0; i<=wordArray.length-1;i++){
+        wordCounter[wordArray[i]] = (wordCounter[wordArray[i]] || 0) + 1;
+    }
+    return wordCounter;
+}
+
+console.log(wordCount(words));
