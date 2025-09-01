@@ -1,25 +1,39 @@
-// let userList =  JSON.parse(localStorage.getItem('userList')) || [];
+let userList =  JSON.parse(localStorage.getItem('userList')) || [];
 
-// function addFunction(){
-//     let inputElement = document.querySelector('.user-input');
-//     const userInput = inputElement.value;
+displayFunction();
+
+function addFunction(){
+    let inputElement = document.querySelector('.user-input');
+    const userInput = inputElement.value;
     
-//     userList.push(userInput);
-//     inputElement.value = '';
+    userList.push(userInput);
+    inputElement.value = '';
+    
+    displayFunction();
 
-//     localStorage.setItem('userList', JSON.stringify(userList));
-// }
+    localStorage.setItem('userList', JSON.stringify(userList));
+}
 
-// function enterInput(event){
-//     let inputElement = document.querySelector('.user-input');
-//     const userInput = inputElement.value;
-//     if(event.key === 'Enter' && userInput){
-//         addFunction();
-//     }
-// }
+function enterInput(event){
+    let inputElement = document.querySelector('.user-input');
+    const userInput = inputElement.value;
+    if(event.key === 'Enter' && userInput){
+        addFunction();
+    }
+}
+
+function displayFunction(){
+    let todoListHTML = '';
+    for(let i=0;i<=userList.length-1;i++){
+        const todo = userList[i];
+        const html = `<p>${todo}</p>`;
+        todoListHTML += html;
+    }
+    document.querySelector('.todo-list').innerHTML = todoListHTML;
+}
 
 
-
+// ===============================================
 // const myArray = [
 //     10, 
 //     20, 
@@ -181,17 +195,17 @@
 
 // =========================================================
 
-let words = ['apple', 'grape', 'apple', 'apple'];
+// let words = ['apple', 'grape', 'apple', 'apple'];
 
-function wordCount(wordArray){
+// function wordCount(wordArray){
 
-    let wordCounter = {
+//     let wordCounter = {
 
-    }
-    for(let i = 0; i<=wordArray.length-1;i++){
-        wordCounter[wordArray[i]] = (wordCounter[wordArray[i]] || 0) + 1;
-    }
-    return wordCounter;
-}
+//     }
+//     for(let i = 0; i<=wordArray.length-1;i++){
+//         wordCounter[wordArray[i]] = (wordCounter[wordArray[i]] || 0) + 1;
+//     }
+//     return wordCounter;
+// }
 
-console.log(wordCount(words));
+// console.log(wordCount(words));
