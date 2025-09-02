@@ -10,8 +10,15 @@ function addFunction(){
     inputElement.value = '';
     
     displayFunction();
-
+    
     localStorage.setItem('userList', JSON.stringify(userList));
+}
+
+function deleteFunction(i){
+    userList.splice(i, 1); 
+    displayFunction();
+    
+    localStorage.setItem('userList', JSON.stringify(userList)); 
 }
 
 function enterInput(event){
@@ -26,9 +33,10 @@ function displayFunction(){
     let todoListHTML = '';
     for(let i=0;i<=userList.length-1;i++){
         const todo = userList[i];
-        const html = `<p>${todo}</p>`;
+        const html = `<p>${todo}<button onclick="deleteFunction(${i})">Delete</button></p>`;
         todoListHTML += html;
     }
+    
     document.querySelector('.todo-list').innerHTML = todoListHTML;
 }
 
