@@ -1,4 +1,4 @@
-let userList =  JSON.parse(localStorage.getItem('userList')) || [{}];
+let userList =  JSON.parse(localStorage.getItem('userList')) || [];
 
 displayFunction();
 
@@ -43,9 +43,8 @@ function displayFunction(){
     let todoListHTML = '';
     for(let i=0;i<=userList.length-1;i++){
         const todoObject = userList[i];
-        const todoName = todoObject.name;
-        const todoDate = todoObject.date;
-        const html = `<p>${todoName}${todoDate}<button onclick="deleteFunction(${i})">Delete</button></p>`;
+        const {name, date} = todoObject;
+        const html = `<p>${name}${date}<button onclick="deleteFunction(${i})">Delete</button></p>`;
         todoListHTML += html;
     }
     
