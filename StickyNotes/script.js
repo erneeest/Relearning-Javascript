@@ -1,17 +1,27 @@
-let userList =  JSON.parse(localStorage.getItem('userList')) || [];
+let userList =  JSON.parse(localStorage.getItem('userList')) || [{}];
 
 displayFunction();
 
 function addFunction(){
-    let inputElement = document.querySelector('.user-input');
+    const inputElement = document.querySelector('.user-input');
     const userInput = inputElement.value;
+
+    const dateElement = document.querySelector('.user-date');
+    const userDate = dateElement.value; 
     
-    userList.push(userInput);
-    inputElement.value = '';
-    
-    displayFunction();
-    
-    localStorage.setItem('userList', JSON.stringify(userList));
+
+    if(userInput){
+        userList.push({
+            name: userInput,
+            date: userDate
+        });
+        
+        inputElement.value = '';
+        
+        displayFunction();
+        
+        localStorage.setItem('userList', JSON.stringify(userList));
+    }
 }
 
 function deleteFunction(i){
@@ -32,8 +42,10 @@ function enterInput(event){
 function displayFunction(){
     let todoListHTML = '';
     for(let i=0;i<=userList.length-1;i++){
-        const todo = userList[i];
-        const html = `<p>${todo}<button onclick="deleteFunction(${i})">Delete</button></p>`;
+        const todoObject = userList[i];
+        const todoName = todoObject.name;
+        const todoDate = todoObject.date;
+        const html = `<p>${todoName}${todoDate}<button onclick="deleteFunction(${i})">Delete</button></p>`;
         todoListHTML += html;
     }
     
