@@ -1,0 +1,110 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+:root{
+    --text-sm: 1.2rem;
+    --text-base: 1.6rem;
+    --text-paragraph: 2rem;
+    --text-h5: 2.4rem;
+    --text-h4: 3.2rem;
+    --text-h3: 4rem;
+    --text-h2: 4.8rem;
+    --text-h1: 6.2rem;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 5%;
+    height: 100vh;
+    border: 1px solid purple;
+}
+
+
+.notes-grid{
+    display: grid;
+    justify-items: center;
+    margin-top: 10rem;
+}
+.input-flex{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.user-input{
+    padding: 1rem 3rem;
+    border: 1px solid rgb(41, 190, 78); 
+    border-radius: .5rem;
+    font-size: var(--text-base);
+    color: black;
+    transition: .25s;
+    width: 80%;
+}
+.user-input:hover, .user-input:focus{
+    border: 1px solid rgb(115, 0, 117);
+    outline: none;
+}
+
+.notes-add{
+    width: 10rem;
+    background-color: rgb(36, 154, 55);
+    border-radius: .5rem;
+    font-size: var(--text-h4);
+    color: white;
+    transition: .25s;
+}
+.notes-add:hover, .notes-add:active{
+    background-color: rgb(24, 122, 58);
+    cursor: pointer;
+}
+
+
+/* ================== */
+.notes-output-grid{
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+
+}
+
+.notes-output-grid-card{
+    display: grid;
+    grid-template-columns: 10fr 3fr;
+    width: 100%;
+    align-items: center;
+    border: 1px solid purple;
+    border-radius: .5rem;
+}
+.output-text{
+    font-size: var(--text-base);
+    padding: 2rem 3rem;
+}
+
+.del-flex{
+    display: flex;
+    justify-content: center;
+}
+.notes-del{
+    background-color: rgb(190, 41, 41);
+    border-radius: .5rem;
+    font-size: var(--text-paragraph);
+    color: white;
+    padding: .5rem 2rem;
+    max-width: 10rem;
+    height: 4.5rem;
+    transition: .25s;
+}
+.notes-del:hover, .notes-del:active{
+    background-color: rgb(133, 28, 28);
+    cursor: pointer;
+}
