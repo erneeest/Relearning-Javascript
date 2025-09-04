@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To-do List ni Ernest</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <main>
             <section>
+                <div class="title-grid">
+                    <h1>To-do List <span class="creds">ni ernest</span></h1>
+                </div>
                 <div class="notes-grid">
                     <div class="input-flex">
-                        <input type="text" class="user-input" placeholder="Notes Here">
+                        <input type="text" class="user-input" placeholder="Notes Here" onkeydown="enterButton(event)">
                         <button class="notes-add" onclick="notesAdded()">+</button>
                     </div>
                     <div class="notes-output-grid">

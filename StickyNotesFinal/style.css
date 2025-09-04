@@ -29,16 +29,26 @@ body{
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    padding: 0 5%;
-    height: 100vh;
+    padding: 5rem 5%;
+    height: 100%;
     border: 1px solid purple;
 }
 
+.title-grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    font-size: var(--text-h5);
+}
+.creds{
+    font-size: var(--text-sm);
+    font-weight: 100;
+}
 
 .notes-grid{
     display: grid;
     justify-items: center;
-    margin-top: 10rem;
 }
 .input-flex{
     display: flex;

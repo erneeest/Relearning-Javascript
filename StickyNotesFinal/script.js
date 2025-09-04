@@ -1,14 +1,23 @@
-let userList = [];
+let userList = JSON.parse(localStorage.getItem('userList')) || [];
+displayNotes();
+
+function enterButton(event){
+    let input = document.querySelector('.user-input').value;
+    if(event.key === 'Enter' && input){
+        notesAdded();
+    }
+}
 
 function notesAdded(){
    let userInputElement = document.querySelector('.user-input');
    let userInputValue = userInputElement.value;
 
    if(userInputValue){
-    userList.unshift(userInputValue);
+    userList.push(userInputValue);
     document.querySelector('.user-input').value = '';
    }
    displayNotes();
+   localStorage.setItem('userList', JSON.stringify(userList));
 }
 
 function displayNotes(){
@@ -28,7 +37,7 @@ function functionUserListHTML(userListValue, index){
                     <p>${userListValue}</p>
                 </div>
                 <div class="del-flex">
-                    <button class="notes-del" onclick="userList.splice(${index}, 1); displayNotes()">Delete</button>
+                    <button class="notes-del" onclick="userList.splice(${index}, 1); displayNotes(); localStorage.setItem('userList', JSON.stringify(userList));">Delete</button>
                 </div>
             </div>`;
 }
