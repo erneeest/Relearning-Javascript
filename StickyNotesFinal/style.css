@@ -31,7 +31,7 @@ body{
     margin: 0 auto;
     padding: 5rem 5%;
     height: 100%;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 .title-grid{
