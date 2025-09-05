@@ -230,15 +230,52 @@ function displayFunction(){
 // console.log(wordCount(words));
 
 //======================= Loops and Arrays ============================
+// let word = 'good';
+// let array1 = ['hello', 'world', 'search', 'good'];
+ 
+// function findIndex(array, word){
+//     for(let i = 0; i<array.length;i++){
+//         if(array1[i]===word){
+//             console.log(i);
+//             break;
+//         }else if(i === array1.length-1){
+//             console.log(-1);
+//         }
+//     }
+// }
 
- let array1 = ['hello', 'world', 'search', 'good'];
+// findIndex(array1, word);
 
- for(let i = 0; i<array1;i++){
-    if(array1[i]==='search'){
-        console.log(2);
-        break;
-    }else{
-        console.log(-1);
-        continue;
-    }
- }
+
+// let foods = ['egg','apple','egg','egg','ham'];
+// function removeEgg(foods){
+//     const foodsCopy = foods.slice();
+//     foodsCopy.reverse();
+//     let countToRemove = 2;
+//     let result = [];
+//     for(let i=0; i<foodsCopy.length;i++){
+//         if(foodsCopy[i]==='egg' && countToRemove>0){
+//             countToRemove--;
+//             continue;
+//         }
+//         result.push(foodsCopy[i]);
+//     }
+//     return result.reverse();
+// }
+// console.log(removeEgg(foods));
+// console.log(foods);
+
+// let nums = [];
+// for(let i=1;i<=20;i++){
+//     if(i%3===0 && i%5===0){
+//         nums.push('FizzBuzz')
+//     }else if(i%3 === 0){
+//         nums.push('Fizz');
+//     }else if(i%5 === 0){
+//         nums.push('Buzz');
+//     }else{
+//         nums.push(i);
+//     }
+// }
+// console.log(nums);
+
