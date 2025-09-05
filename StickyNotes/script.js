@@ -228,3 +228,17 @@ function displayFunction(){
 // }
 
 // console.log(wordCount(words));
+
+//======================= Loops and Arrays ============================
+
+ let array1 = ['hello', 'world', 'search', 'good'];
+
+ for(let i = 0; i<array1;i++){
+    if(array1[i]==='search'){
+        console.log(2);
+        break;
+    }else{
+        console.log(-1);
+        continue;
+    }
+ }
