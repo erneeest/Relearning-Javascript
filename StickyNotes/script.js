@@ -279,3 +279,28 @@ function displayFunction(){
 // }
 // console.log(nums);
 
+
+// const colors = ['green', 'white', 'red', 'blue', 'red', 'blue'];
+// function findIndex(array, word){
+
+//     let finalIndex;
+//     for(let i=0;i<array.length;i++){
+//         if(array[i]===word){
+//             finalIndex = i;
+//             break;
+//         }
+//     }
+//     return finalIndex;
+// }
+// function uniqueFun(array){
+//     let newUnique = [];
+//     for(let i=0;i<array.length;i++){
+//         if(!findIndex(newUnique, array[i])){
+//             newUnique.push(array[i]);
+//         }
+//     }
+//     return newUnique;
+// }
+// console.log(uniqueFun(colors));
+
+
