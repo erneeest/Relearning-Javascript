@@ -22,10 +22,10 @@ function notesAdded(){
 
 function displayNotes(){
     let userListHTMLString = '';
-    userList.forEach(function(todoValues, i){
+    userList.forEach(function(todoValues, index){
         // const { name, value } = todoValues;    
         let userListValue = todoValues;
-        let userListHTML = functionUserListHTML(userListValue, i);
+        let userListHTML = functionUserListHTML(userListValue, index);
         userListHTMLString += userListHTML;
     })
 
