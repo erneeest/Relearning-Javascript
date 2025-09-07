@@ -343,3 +343,11 @@ const { log } = console;
 // log('hi');
 
 // setInterval(function(){log('hiHo');}, 1000);
+
+['make diner',
+ 'wash dishes',
+ 'watch youtube'
+].forEach(function(value, i){
+    log(i);
+    log(value);
+});
