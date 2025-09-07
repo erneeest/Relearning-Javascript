@@ -51,12 +51,21 @@ body{
 .yourButton{
     border-radius: 20%;
 }
-.reset-btn{
+.btn{
     padding: 20px 80px;
     font-size: 30px;
     border-radius: 10px;
     border: none;
-    background-color: rgba(255, 0, 0, 0.969);
     color: white;
     cursor: pointer;
+}
+.reset{
+    background-color: rgba(255, 0, 0, 0.969);
+    margin-bottom: 10px;
+}
+.auto-play{
+    background-color: rgba(21, 142, 8, 0.969);
+}
+.auto-play-on{
+    background-color: rgba(23, 76, 52, 0.969);    
 }

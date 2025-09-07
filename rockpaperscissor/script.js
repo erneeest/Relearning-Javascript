@@ -1,7 +1,6 @@
 let result = '';
 
 
-
 function resetScore(){
     score.wins = 0;
     score.loses = 0;
@@ -42,6 +41,32 @@ function OpponentsResponse(){
         return 'Scissor';
     }
 }
+
+function YourBotResponse(){
+    const randomNum = Math.random();
+
+    if(randomNum < 1/3){
+        rock();
+    }else if(randomNum < 2/3){
+        paper();
+    }else{
+        scissor();
+    }
+}
+let isAutoPlaying = false;
+let intervalID;
+function AutoPlay(){
+    if(!isAutoPlaying){
+       intervalID = setInterval(function(){YourBotResponse()}, 1000);
+        document.querySelector('.auto-play').classList.replace('auto-play', 'auto-play-on');
+       isAutoPlaying = !isAutoPlaying;
+    }else{
+        document.querySelector('.auto-play-on').classList.replace('auto-play-on', 'auto-play');
+        clearInterval(intervalID);
+        isAutoPlaying = !isAutoPlaying;
+    }
+}
+
 function rock(OR = OpponentsResponse()){
     document.querySelector('.urMove').src = 'images/rock.png';
    
