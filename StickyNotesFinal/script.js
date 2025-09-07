@@ -22,11 +22,13 @@ function notesAdded(){
 
 function displayNotes(){
     let userListHTMLString = '';
-    for(let i=0;i<=userList.length-1;i++){
-        let userListValue = userList[i];
+    userList.forEach(function(todoValues, i){
+        // const { name, value } = todoValues;    
+        let userListValue = todoValues;
         let userListHTML = functionUserListHTML(userListValue, i);
         userListHTMLString += userListHTML;
-    }
+    })
+
     document.querySelector('.notes-output-grid').innerHTML = userListHTMLString;
     
 }
