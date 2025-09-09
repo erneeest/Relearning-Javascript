@@ -9,9 +9,9 @@
   <body class="container">
     <div class="centering-container">
         <div class="buttons-grid">
-          <button class="yourButton" onclick="rock();"><img class="imageButtonTransform" src="images/rock.png" alt="rock"></button>
-          <button class="yourButton" onclick="paper();"><img class="imageButtonTransform" src="images/paper.png" alt="paper"></button>
-          <button class="yourButton" onclick="scissor();"><img class="imageButtonTransform" src="images/scissor.png" alt="scissor"></button>
+          <button class="yourButton js-rock-button"><img class="imageButtonTransform" src="images/rock.png" alt="rock"></button>
+          <button class="yourButton js-paper-button"><img class="imageButtonTransform" src="images/paper.png" alt="paper"></button>
+          <button class="yourButton js-scissor-button"><img class="imageButtonTransform" src="images/scissor.png" alt="scissor"></button>
         </div>
 
         <div class="displaying-move">
@@ -20,8 +20,8 @@
 
         <h2 class="scoring"></h2>  
         
-        <button class="btn reset" onclick="resetScore();">Reset Score</button>
-        <button class="btn auto-play" onclick="AutoPlay()">Auto play</button>
+        <button class="btn reset js-reset-button">Reset Score</button>
+        <button class="btn auto-play js-autoplay-button">Auto play</button>
     </div>
     <script src="script.js"></script>
   </body>

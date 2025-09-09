@@ -1,6 +1,33 @@
 let result = '';
 
 
+let rockButtonElement = document.querySelector('.js-rock-button'); 
+let paperButtonElement = document.querySelector('.js-paper-button'); 
+let scissorButtonElement = document.querySelector('.js-scissor-button'); 
+
+let resetButtonElement = document.querySelector('.js-reset-button');
+let autoplayButtonElement = document.querySelector('.js-autoplay-button');
+
+rockButtonElement.addEventListener('click', () => {rock()});
+paperButtonElement.addEventListener('click', () => {paper()});
+scissorButtonElement.addEventListener('click', () => {scissor()});
+
+resetButtonElement.addEventListener('click', () => {resetScore()});
+autoplayButtonElement.addEventListener('click', () => {AutoPlay()});
+
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r'){
+        rock();
+    }else if(event.key === 'p'){
+        paper();
+    }else if(event.key === 's'){
+        scissor();
+    }
+});
+
+
+
+
 function resetScore(){
     score.wins = 0;
     score.loses = 0;
