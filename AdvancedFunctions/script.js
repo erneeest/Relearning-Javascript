@@ -47,54 +47,104 @@ const { log } = console;
 //     log(value);
 // });
 
+// =============================== Advanced Functions pt.1 Exercises ================================================================
+// let add = function(){
+//     console.log(2+3);
+// }
 
-let add = function(){
-    console.log(2+3);
+// function runTwice(fun){
+//     fun();
+//     fun();
+// }
+
+// runTwice(add);
+
+// function loading(){
+//     document.querySelector('.start').innerHTML = 'Loading...';
+//     setTimeout(function(){
+//         document.querySelector('.start').innerHTML = 'Finished!';
+//     }, 1000);
+// }
+
+// let timeoutID;
+// function addedToCart(){
+//     clearTimeout(timeoutID);
+//     document.querySelector('.add-text').innerHTML = 'Added';
+//     timeoutID = setTimeout(function(){document.querySelector('.add-text').innerHTML = ''}, 2000);
+// }
+
+
+// // continuing 12g.
+
+// let numOfMessages = 3;
+// setInterval(function(){
+//     if(document.title === 'App'){
+//         if(numOfMessages > 1){
+//             document.title = `(${numOfMessages}) New Messages`;
+//         }else if(numOfMessages === 1){
+//             document.title = 'New Messages';
+//         }else{
+//             document.title = 'App';
+//         }
+//     }else{
+//         document.title = 'App';
+//     }
+// },2000);
+
+// function addMsg(){
+//     numOfMessages++;
+// }
+
+// function subMsg(){
+//     numOfMessages--;
+// }
+// =============================== Advanced Functions pt.2 ================================================================
+//Shorter way to write a function 
+
+// () => {} is like function(){}
+
+/*
+let regularFunction = function(param){
+    console.log(param);
 }
 
-function runTwice(fun){
-    fun();
-    fun();
+let arrowFunctionParams = (param1, param2) => { // use () if the param is 2 or more
+    console.log()
 }
 
-runTwice(add);
+let arrowFunction = param => { // () is optional if there's only one parameter
+    console.log(param);
+}
+
+let oneLineFunction = param => param + 5; // {} is optional if it's only one line function ... return param + 5
+
+console.log(oneLineFunction(5));
+
+// arrowFunction is recommended if you're passing a function into another function
+
+const objext = {
+    method: () => {},
+    method(){
+
+    }
+}*/
+// =================
+
+let greet = () => {console.log('Hello Gang!');};
+
+let startButton = document.querySelector('.start');
+startButton.addEventListener('click', () => {
+    loading();
+});
+
+startButton.addEventListener('click', greet);
+
+// startButton.removeEventListener('click', greet);
+
 
 function loading(){
     document.querySelector('.start').innerHTML = 'Loading...';
     setTimeout(function(){
         document.querySelector('.start').innerHTML = 'Finished!';
     }, 1000);
-}
-
-let timeoutID;
-function addedToCart(){
-    clearTimeout(timeoutID);
-    document.querySelector('.add-text').innerHTML = 'Added';
-    timeoutID = setTimeout(function(){document.querySelector('.add-text').innerHTML = ''}, 2000);
-}
-
-
-// continuing 12g.
-
-let numOfMessages = 3;
-setInterval(function(){
-    if(document.title === 'App'){
-        if(numOfMessages > 1){
-            document.title = `(${numOfMessages}) New Messages`;
-        }else if(numOfMessages === 1){
-            document.title = 'New Messages';
-        }else{
-            document.title = 'App';
-        }
-    }else{
-        document.title = 'App';
-    }
-},2000);
-
-function addMsg(){
-    numOfMessages++;
-}
-
-function subMsg(){
-    numOfMessages--;
 }
