@@ -57,7 +57,7 @@ let isAutoPlaying = false;
 let intervalID;
 function AutoPlay(){
     if(!isAutoPlaying){
-       intervalID = setInterval(function(){YourBotResponse()}, 1000);
+       intervalID = setInterval(() => {YourBotResponse()}, 1000);
         document.querySelector('.auto-play').classList.replace('auto-play', 'auto-play-on');
        isAutoPlaying = !isAutoPlaying;
     }else{
