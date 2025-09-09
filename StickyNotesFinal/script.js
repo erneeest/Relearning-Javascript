@@ -1,6 +1,13 @@
 let userList = JSON.parse(localStorage.getItem('userList')) || [];
 displayNotes();
 
+
+let userInputElement = document.querySelector('.js-userinput');
+let notesAddedElement = document.querySelector('.js-notesadd');
+
+userInputElement.addEventListener('keydown', (event) => {enterButton(event)});
+notesAddedElement.addEventListener('click', () => {notesAdded()});
+
 function enterButton(event){
     let input = document.querySelector('.user-input').value;
     if(event.key === 'Enter' && input){
