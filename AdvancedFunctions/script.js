@@ -148,3 +148,22 @@ function loading(){
         document.querySelector('.start').innerHTML = 'Finished!';
     }, 1000);
 }
+// ==================================================== Works like forEach but creates a new array
+//================================== filter()
+// console.log([1, -6, 9, ,10, -100, 2].filter((value, index) => {
+//     if(value < 0){
+//         return false;
+//     }else{
+//         return true;
+//     }
+// }));
+
+console.log([1, -6, 9, ,10, -100, 2].filter(value => value >= 0));
+
+//================================== map()
+
+// console.log([1, 3, 2].map((value, index) => {
+//     return value * 2;
+// }));
+
+console.log([1, 3, 2].map(value => value * 2));
