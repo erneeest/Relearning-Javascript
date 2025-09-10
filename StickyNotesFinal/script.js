@@ -29,7 +29,7 @@ function notesAdded(){
 
 function displayNotes(){
     let userListHTMLString = '';
-    userList.forEach(function(todoValues, index){
+    userList.forEach((todoValues, index) => {
         // const { name, value } = todoValues;    
         let userListValue = todoValues;
         let userListHTML = functionUserListHTML(userListValue, index);
@@ -37,16 +37,26 @@ function displayNotes(){
     })
 
     document.querySelector('.notes-output-grid').innerHTML = userListHTMLString;
+
+    document.querySelectorAll('.js-notes-del').forEach((deleteButton, index) => {
     
+        deleteButton.addEventListener('click', () => {
+    
+        userList.splice(index, 1);    
+        displayNotes();
+        localStorage.setItem('userList', JSON.stringify(userList));
+            
+        })
+    })
 }
 
-function functionUserListHTML(userListValue, index){
+function functionUserListHTML(userListValue){
     return `<div class="notes-output-grid-card">
                 <div class="output-text">
                     <p>${userListValue}</p>
                 </div>
                 <div class="del-flex">
-                    <button class="notes-del" onclick="userList.splice(${index}, 1); displayNotes(); localStorage.setItem('userList', JSON.stringify(userList));">Delete</button>
+                    <button class="notes-del js-notes-del">Delete</button>
                 </div>
             </div>`;
 }
